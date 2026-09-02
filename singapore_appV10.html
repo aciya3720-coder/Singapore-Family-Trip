@@ -780,5 +780,76 @@
             switchDay(1);
         };
     </script>
+    <!-- JS 邏輯 -->
+    <script>
+        const outfitData = {
+            1: "<strong>輕便涼爽短袖 + 隨身薄外套</strong><br>下機進入冷氣商場與餐廳較涼，建議幫長輩準備一件透氣薄罩衫應對溫差。",
+            2: "<strong>吸濕排汗衣物 + 好走平底鞋</strong><br>戶外走動多且濱海灣溫差大（雲霧林室內冷氣強、戶外約 30°C），建議洋蔥式穿法與防曬帽。",
+            3: "<strong>舒適透氣休閒服 + 輕便鞋</strong><br>前往植物園戶外散步，穿著吸汗透氣短袖，準備前往星耀樟宜搭機即可。"
+        };
+
+        // 強制頁面回到最頂端的通用函式
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'instant' });
+            document.documentElement.scrollTop = 0;
+            document.body.scrollTop = 0;
+        }
+
+        function switchTab(tabName) {
+            document.querySelectorAll('main > section').forEach(el => el.classList.add('hidden'));
+            document.getElementById(`tab-${tabName}`).classList.remove('hidden');
+
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('text-fuji', 'font-bold');
+                btn.classList.add('text-gray-400');
+            });
+
+            const activeBtn = document.getElementById(`nav-${tabName}`);
+            activeBtn.classList.remove('text-gray-400');
+            activeBtn.classList.add('text-fuji', 'font-bold');
+
+            // 執行回到頂端
+            scrollToTop();
+        }
+
+        function switchDay(dayNum) {
+            document.querySelectorAll('.day-content').forEach(el => el.classList.add('hidden'));
+            document.getElementById(`day-content-${dayNum}`).classList.remove('hidden');
+
+            document.querySelectorAll('.day-btn').forEach(btn => {
+                btn.className = "day-btn flex-1 min-w-[110px] py-2 px-3 rounded-2xl bg-white text-gray-500 font-bold text-sm shadow-sm hover:bg-gray-50 transition-all text-center border border-gray-100";
+            });
+
+            const activeBtn = document.getElementById(`day-btn-${dayNum}`);
+            activeBtn.className = "day-btn flex-1 min-w-[110px] py-2 px-3 rounded-2xl bg-fuji text-white font-bold text-sm shadow-md transition-all text-center";
+
+            document.getElementById('outfit-day-tag').innerText = `Day ${dayNum} 搭配`;
+            document.getElementById('outfit-content').innerHTML = outfitData[dayNum];
+
+            // 執行回到頂端
+            scrollToTop();
+        }
+
+        function previewImage(event, previewId) {
+            const container = document.getElementById(previewId);
+            container.classList.remove('hidden');
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const img = document.createElement('img');
+                    img.src = e.target.result;
+                    img.className = 'w-16 h-16 object-cover rounded-2xl border border-blue-200 shadow-sm';
+                    container.appendChild(img);
+                }
+                reader.readAsDataURL(file);
+            }
+        }
+
+        window.onload = function() {
+            switchTab('route');
+            switchDay(1);
+        };
+    </script>
 </body>
 </html>
