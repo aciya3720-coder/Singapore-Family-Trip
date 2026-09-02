@@ -81,7 +81,6 @@
                     </div>
                     <span class="text-xs text-gray-400 font-medium">全程 Grab 約 30-40 分</span>
                 </div>
-                <!-- 路線示意圖 -->
                 <div class="relative bg-slate-100 min-h-[220px] flex items-center justify-center p-2">
                     <img src="https://images.unsplash.com/photo-1542296332-2e4473faf563?auto=format&fit=crop&w=800&q=80" alt="Day 1 路線地圖" class="w-full h-52 object-cover rounded-2xl shadow-inner border border-gray-200">
                     <div class="absolute inset-0 bg-black/20 rounded-2xl flex flex-col justify-between p-4">
@@ -93,7 +92,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- 路線順序點列表 -->
                 <div class="p-4 space-y-2 text-xs">
                     <div class="flex items-center space-x-2">
                         <span class="w-5 h-5 rounded-full bg-red-500 text-white font-bold text-[11px] flex items-center justify-center">1</span>
@@ -125,7 +123,6 @@
                     </div>
                     <span class="text-xs text-gray-400 font-medium">集中市中心 短距移動</span>
                 </div>
-                <!-- 路線示意圖 -->
                 <div class="relative bg-slate-100 min-h-[220px] flex items-center justify-center p-2">
                     <img src="https://image.cdn-eztravel.com.tw/Vy1OEfl7FQYl-D00CpntE3rqZoupT90LuRo43qVwU8A/g:ce/aHR0cHM6Ly92YWNhdGlvbi5jZG4tZXp0cmF2ZWwuY29tLnR3L2ltZy9WRFIvU0dfMzUwNDg0MTQ2LmpwZw.jpg" alt="Day 2 路線地圖" class="w-full h-52 object-cover rounded-2xl shadow-inner border border-gray-200">
                     <div class="absolute inset-0 bg-black/20 rounded-2xl flex flex-col justify-between p-4">
@@ -137,7 +134,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- 路線順序點列表 -->
                 <div class="p-4 space-y-2 text-xs">
                     <div class="flex items-center space-x-2">
                         <span class="w-5 h-5 rounded-full bg-blue-500 text-white font-bold text-[11px] flex items-center justify-center">1</span>
@@ -176,7 +172,6 @@
                     </div>
                     <span class="text-xs text-gray-400 font-medium">往東返航路線</span>
                 </div>
-                <!-- 路線示意圖 -->
                 <div class="relative bg-slate-100 min-h-[220px] flex items-center justify-center p-2">
                     <img src="https://d189djjbmcrkk.cloudfront.net/tinymce/h1PBSjlAjtVpVZtm8RXcOf3f9Iil68WCVCYni82Q.jpeg" alt="Day 3 路線地圖" class="w-full h-52 object-cover rounded-2xl shadow-inner border border-gray-200">
                     <div class="absolute inset-0 bg-black/20 rounded-2xl flex flex-col justify-between p-4">
@@ -188,7 +183,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- 路線順序點列表 -->
                 <div class="p-4 space-y-2 text-xs">
                     <div class="flex items-center space-x-2">
                         <span class="w-5 h-5 rounded-full bg-emerald-500 text-white font-bold text-[11px] flex items-center justify-center">1</span>
@@ -214,25 +208,26 @@
         </section>
 
         <!-- ================= 頁籤 2：每日行程頁 (Itinerary) ================= -->
-        <section id="tab-itinerary" class="space-y-6 hidden">
+        <section id="tab-itinerary" class="space-y-4 hidden">
             
-            <!-- 天數切換器 -->
-            <div class="flex space-x-2 overflow-x-auto hide-scrollbar py-1">
-                <button onclick="switchDay(1)" id="day-btn-1" class="day-btn flex-1 min-w-[110px] py-2 px-3 rounded-2xl bg-fuji text-white font-bold text-sm shadow-md transition-all text-center">
-                    Day 1 <span class="block text-[10px] font-normal opacity-90">抵達新加坡</span>
-                </button>
-                <button onclick="switchDay(2)" id="day-btn-2" class="day-btn flex-1 min-w-[110px] py-2 px-3 rounded-2xl bg-white text-gray-500 font-bold text-sm shadow-sm hover:bg-gray-50 transition-all text-center border border-gray-100">
-                    Day 2 <span class="block text-[10px] font-normal text-gray-400">濱海灣一日遊</span>
-                </button>
-                <button onclick="switchDay(3)" id="day-btn-3" class="day-btn flex-1 min-w-[110px] py-2 px-3 rounded-2xl bg-white text-gray-500 font-bold text-sm shadow-sm hover:bg-gray-50 transition-all text-center border border-gray-100">
-                    Day 3 <span class="block text-[10px] font-normal text-gray-400">植物園&星耀樟宜</span>
-                </button>
+            <!-- 天數切換器：使用 sticky top 釘住頂部 -->
+            <div class="sticky top-[73px] z-30 bg-eef2f6/90 backdrop-blur-md py-2 -mx-4 px-4 shadow-sm">
+                <div class="flex space-x-2 overflow-x-auto hide-scrollbar">
+                    <button onclick="switchDay(1)" id="day-btn-1" class="day-btn flex-1 min-w-[110px] py-2 px-3 rounded-2xl bg-fuji text-white font-bold text-sm shadow-md transition-all text-center">
+                        Day 1 <span class="block text-[10px] font-normal opacity-90">抵達新加坡</span>
+                    </button>
+                    <button onclick="switchDay(2)" id="day-btn-2" class="day-btn flex-1 min-w-[110px] py-2 px-3 rounded-2xl bg-white text-gray-500 font-bold text-sm shadow-sm hover:bg-gray-50 transition-all text-center border border-gray-100">
+                        Day 2 <span class="block text-[10px] font-normal text-gray-400">濱海灣一日遊</span>
+                    </button>
+                    <button onclick="switchDay(3)" id="day-btn-3" class="day-btn flex-1 min-w-[110px] py-2 px-3 rounded-2xl bg-white text-gray-500 font-bold text-sm shadow-sm hover:bg-gray-50 transition-all text-center border border-gray-100">
+                        Day 3 <span class="block text-[10px] font-normal text-gray-400">植物園&星耀樟宜</span>
+                    </button>
+                </div>
             </div>
 
             <!-- ================= DAY 1 內容 ================= -->
             <div id="day-content-1" class="day-content space-y-4">
                 
-                <!-- 1. 樟宜機場抵達與通關 -->
                 <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-blue-50 transition-all hover:shadow-md">
                     <div class="h-44 bg-cover bg-center relative" style="background-image: url('https://blog-static.kkday.com/zh-tw/blog/wp-content/uploads/batch_IMG_9866-1-1.jpg');">
                         <span class="absolute top-3 left-3 bg-blue-500/90 backdrop-blur-md text-white font-bold text-xs px-3 py-1 rounded-full shadow-sm">
@@ -252,7 +247,6 @@
                     </div>
                 </div>
 
-                <!-- 2. 前往飯店 Check in -->
                 <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-blue-50 transition-all hover:shadow-md">
                     <div class="h-44 bg-cover bg-center relative" style="background-image: url('https://cf.bstatic.com/xdata/images/hotel/max1024x768/808250525.jpg?k=dded1373db26672ba6e965f42855af13238d982c000cd7f85075da012f0a6f20&o=');">
                         <span class="absolute top-3 left-3 bg-purple-500/90 backdrop-blur-md text-white font-bold text-xs px-3 py-1 rounded-full shadow-sm">
@@ -272,7 +266,6 @@
                     </div>
                 </div>
 
-                <!-- 3. 松發肉骨茶 -->
                 <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-blue-50 transition-all hover:shadow-md">
                     <div class="h-44 bg-cover bg-center relative" style="background-image: url('https://res.klook.com/image/upload/w_750,h_469,c_fill,q_85/w_80,x_15,y_15,g_south_west,l_Klook_water_br_trans_yhcmh3/activities/cs274alcduljhmydfsh7.jpg');">
                         <span class="absolute top-3 left-3 bg-amber-500/90 backdrop-blur-md text-white font-bold text-xs px-3 py-1 rounded-full shadow-sm">
@@ -313,7 +306,6 @@
             <!-- ================= DAY 2 內容 ================= -->
             <div id="day-content-2" class="day-content space-y-4 hidden">
                 
-                <!-- 飯店早餐 -->
                 <div class="bg-white rounded-3xl p-5 shadow-sm border border-blue-50">
                     <div class="flex justify-between items-center mb-1">
                         <span class="bg-amber-100 text-amber-700 font-bold text-xs px-2.5 py-0.5 rounded-full">🍳 08:30 - 09:15</span>
@@ -322,7 +314,6 @@
                     <p class="text-xs text-gray-500">在 Sheraton 飯店內享用豐盛早餐，悠閒準備出門。</p>
                 </div>
 
-                <!-- 1. 讚美廣場 -->
                 <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-blue-50 transition-all hover:shadow-md">
                     <div class="h-44 bg-cover bg-center relative" style="background-image: url('https://image.cdn-eztravel.com.tw/CyYYISdMai4YuU2WiSS7Z6-0veh3aattON06eO-YmGk/g:ce/aHR0cHM6Ly92YWNhdGlvbi5jZG4tZXp0cmF2ZWwuY29tLnR3L2ltZy9WRFIvU0dfMjg1NzA5NDQyLmpwZw.jpg');">
                         <span class="absolute top-3 left-3 bg-emerald-500/90 backdrop-blur-md text-white font-bold text-xs px-3 py-1 rounded-full shadow-sm">
@@ -345,7 +336,6 @@
                     </div>
                 </div>
 
-                <!-- 2. 魚尾獅公園 -->
                 <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-blue-50 transition-all hover:shadow-md">
                     <div class="h-44 bg-cover bg-center relative" style="background-image: url('https://image.cdn-eztravel.com.tw/3AKAf94bbctDFJ2yw7lq0JgZ_2Z3dQXTHIkLchaXLVA/g:ce/aHR0cHM6Ly92YWNhdGlvbi5jZG4tZXp0cmF2ZWwuY29tLnR3L2ltZy9WRFIvU0dfNDExMDMzMzU4LmpwZw.jpg');">
                         <span class="absolute top-3 left-3 bg-emerald-500/90 backdrop-blur-md text-white font-bold text-xs px-3 py-1 rounded-full shadow-sm">
@@ -368,7 +358,6 @@
                     </div>
                 </div>
 
-                <!-- 3. 濱海灣金沙購物商城 -->
                 <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-blue-50 transition-all hover:shadow-md">
                     <div class="h-44 bg-cover bg-center relative" style="background-image: url('https://www.bring-you.info/imgs/2016/08/Marina_Bay_Sands-2.jpg');">
                         <span class="absolute top-3 left-3 bg-pink-500/90 backdrop-blur-md text-white font-bold text-xs px-3 py-1 rounded-full shadow-sm">
@@ -392,7 +381,6 @@
                     </div>
                 </div>
 
-                <!-- 4. 雲霧林 -->
                 <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-blue-50 transition-all hover:shadow-md">
                     <div class="h-44 bg-cover bg-center relative" style="background-image: url('https://dynamic-media-cdn.tripadvisor.com/media/photo-o/30/57/56/ce/cloud-forest-featuring.jpg?w=900&h=-1&s=1');">
                         <span class="absolute top-3 left-3 bg-indigo-500/90 backdrop-blur-md text-white font-bold text-xs px-3 py-1 rounded-full shadow-sm">
@@ -415,7 +403,6 @@
                     </div>
                 </div>
 
-                <!-- 濱海灣花園晚餐 -->
                 <div class="bg-white rounded-3xl p-5 shadow-sm border border-blue-50">
                     <div class="flex justify-between items-center mb-1">
                         <span class="bg-amber-100 text-amber-700 font-bold text-xs px-2.5 py-0.5 rounded-full">🍲 17:30 - 19:00</span>
@@ -424,7 +411,6 @@
                     <p class="text-xs text-gray-500">直接在園區內享用（如 Shake Shack 或 Satay by the Bay 沙爹熟食中心），不拉車耗費體力。</p>
                 </div>
 
-                <!-- 5. 超級樹燈光秀 -->
                 <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-blue-50 transition-all hover:shadow-md">
                     <div class="h-44 bg-cover bg-center relative" style="background-image: url('https://retrievertrip.com/wp-content/uploads/2023/10/%E6%BF%B1%E6%B5%B7%E7%81%A3%E8%8A%B1%E5%9C%92Gardens-by-the-Bay%E8%B6%85%E7%B4%9A%E6%A8%B9%E7%A9%BA%E4%B8%AD%E8%B5%B0%E5%BB%8A%EF%BC%88OCBC-Skyway%EF%BC%89-4-800x600.jpg');">
                         <span class="absolute top-3 left-3 bg-purple-600/90 backdrop-blur-md text-white font-bold text-xs px-3 py-1 rounded-full shadow-sm">
@@ -439,11 +425,10 @@
                     </div>
                 </div>
 
-                <!-- 6. 金沙 Spectra 水舞秀 -->
                 <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-blue-50 transition-all hover:shadow-md">
                     <div class="h-44 bg-cover bg-center relative" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTkGnfTcMMRWOjPQ6IJSM5_zOnloIgG-lq_L_0e9DrKW6gGT9m_66UcjE&s=10');">
                         <span class="absolute top-3 left-3 bg-blue-600/90 backdrop-blur-md text-white font-bold text-xs px-3 py-1 rounded-full shadow-sm">
-                            ⛲ 20:30 - 21:15｜金沙水舞秀
+                             fountain 20:30 - 21:15｜金沙水舞秀
                         </span>
                     </div>
                     <div class="p-5">
@@ -459,7 +444,6 @@
             <!-- ================= DAY 3 內容 ================= -->
             <div id="day-content-3" class="day-content space-y-4 hidden">
                 
-                <!-- 飯店退房 -->
                 <div class="bg-white rounded-3xl p-5 shadow-sm border border-blue-50">
                     <div class="flex justify-between items-center mb-1">
                         <span class="bg-blue-100 text-blue-700 font-bold text-xs px-2.5 py-0.5 rounded-full">🧳 08:30 - 09:15</span>
@@ -468,7 +452,6 @@
                     <p class="text-xs text-gray-500">飯店享用早餐與辦理退房（行李隨車載走）。</p>
                 </div>
 
-                <!-- 1. 新加坡植物園 -->
                 <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-blue-50 transition-all hover:shadow-md">
                     <div class="h-44 bg-cover bg-center relative" style="background-image: url('https://img.natgeomedia.com/userfiles/sm/sm1920_images_A1/10857/2020032061486861.jpg');">
                         <span class="absolute top-3 left-3 bg-emerald-500/90 backdrop-blur-md text-white font-bold text-xs px-3 py-1 rounded-full shadow-sm">
@@ -491,7 +474,6 @@
                     </div>
                 </div>
 
-                <!-- 2. 星耀樟宜 (Jewel) 午餐與巨型瀑布 -->
                 <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-blue-50 transition-all hover:shadow-md">
                     <div class="h-44 bg-cover bg-center relative" style="background-image: url('https://mimigo.tw/wp-content/uploads/20190419113553_64.jpg');">
                         <span class="absolute top-3 left-3 bg-blue-600/90 backdrop-blur-md text-white font-bold text-xs px-3 py-1 rounded-full shadow-sm">
@@ -515,7 +497,6 @@
                     </div>
                 </div>
 
-                <!-- 3. 16:15 機場 Check in 通關 -->
                 <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-blue-50 transition-all hover:shadow-md">
                     <div class="h-44 bg-cover bg-center relative" style="background-image: url('https://imgcdn.cna.com.tw/www/WebPhotos/1024/20250208/1024x768_wmkn_0_C20250208000132.jpg');">
                         <span class="absolute top-3 left-3 bg-fuji-dark text-white font-bold text-xs px-3 py-1 rounded-full shadow-sm">
@@ -544,7 +525,6 @@
                     </span>
                 </div>
                 <div id="outfit-content" class="text-xs text-gray-600 leading-relaxed bg-warmgray/60 p-3.5 rounded-2xl border border-gray-100">
-                    <!-- JS 動態替換 -->
                 </div>
             </div>
 
@@ -553,7 +533,6 @@
         <!-- ================= 頁籤 3：指南頁 (Guide) ================= -->
         <section id="tab-guide" class="space-y-4 hidden">
             
-            <!-- 1. 無障礙景點評估 -->
             <div class="bg-white rounded-3xl p-5 shadow-sm border border-blue-50">
                 <h3 class="font-bold text-gray-800 mb-3 text-sm flex items-center space-x-2">
                     <span class="text-base">♿</span>
@@ -579,7 +558,6 @@
                 </div>
             </div>
 
-            <!-- 2. 門票費用與免費景點整理 -->
             <div class="bg-white rounded-3xl p-5 shadow-sm border border-blue-50">
                 <h3 class="font-bold text-gray-800 mb-3 text-sm flex items-center space-x-2">
                     <span class="text-base">🎟️</span>
@@ -638,7 +616,6 @@
                 </div>
             </div>
 
-            <!-- 3. 餐廳推薦與訂位指南 -->
             <div class="bg-white rounded-3xl p-5 shadow-sm border border-blue-50">
                 <h3 class="font-bold text-gray-800 mb-3 text-sm flex items-center space-x-2">
                     <span class="text-base">🍽️</span>
@@ -694,6 +671,11 @@
 
     </main>
 
+    <!-- 右下角浮動 Top 按鈕 -->
+    <button onclick="scrollToTop()" class="fixed bottom-20 right-5 z-40 bg-fuji/90 backdrop-blur-md text-white font-bold w-10 h-10 rounded-full shadow-lg border border-white/50 flex items-center justify-center text-sm active:scale-95 transition-all">
+        ▲
+    </button>
+
     <!-- 底部浮動導覽條 -->
     <nav class="fixed bottom-4 left-0 right-0 z-50 px-4">
         <div class="max-w-md mx-auto bg-white/90 backdrop-blur-lg rounded-3xl shadow-lg border border-blue-100 p-1.5 flex justify-around items-center">
@@ -724,73 +706,8 @@
             3: "<strong>舒適透氣休閒服 + 輕便鞋</strong><br>前往植物園戶外散步，穿著吸汗透氣短袖，準備前往星耀樟宜搭機即可。"
         };
 
-        function switchTab(tabName) {
-            document.querySelectorAll('main > section').forEach(el => el.classList.add('hidden'));
-            document.getElementById(`tab-${tabName}`).classList.remove('hidden');
-
-            document.querySelectorAll('.nav-btn').forEach(btn => {
-                btn.classList.remove('text-fuji', 'font-bold');
-                btn.classList.add('text-gray-400');
-            });
-
-            const activeBtn = document.getElementById(`nav-${tabName}`);
-            activeBtn.classList.remove('text-gray-400');
-            activeBtn.classList.add('text-fuji', 'font-bold');
-
-            // 修正體驗：切換頁籤時自動回到頁面最頂端
-            window.scrollTo(0, 0);
-        }
-
-        function switchDay(dayNum) {
-            document.querySelectorAll('.day-content').forEach(el => el.classList.add('hidden'));
-            document.getElementById(`day-content-${dayNum}`).classList.remove('hidden');
-
-            document.querySelectorAll('.day-btn').forEach(btn => {
-                btn.className = "day-btn flex-1 min-w-[110px] py-2 px-3 rounded-2xl bg-white text-gray-500 font-bold text-sm shadow-sm hover:bg-gray-50 transition-all text-center border border-gray-100";
-            });
-
-            const activeBtn = document.getElementById(`day-btn-${dayNum}`);
-            activeBtn.className = "day-btn flex-1 min-w-[110px] py-2 px-3 rounded-2xl bg-fuji text-white font-bold text-sm shadow-md transition-all text-center";
-
-            document.getElementById('outfit-day-tag').innerText = `Day ${dayNum} 搭配`;
-            document.getElementById('outfit-content').innerHTML = outfitData[dayNum];
-
-            // 修正體驗：切換 Day 1 / Day 2 / Day 3 時也自動回到頂端
-            window.scrollTo(0, 0);
-        }
-
-        function previewImage(event, previewId) {
-            const container = document.getElementById(previewId);
-            container.classList.remove('hidden');
-            const file = event.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    const img = document.createElement('img');
-                    img.src = e.target.result;
-                    img.className = 'w-16 h-16 object-cover rounded-2xl border border-blue-200 shadow-sm';
-                    container.appendChild(img);
-                }
-                reader.readAsDataURL(file);
-            }
-        }
-
-        window.onload = function() {
-            switchTab('route');
-            switchDay(1);
-        };
-    </script>
-    <!-- JS 邏輯 -->
-    <script>
-        const outfitData = {
-            1: "<strong>輕便涼爽短袖 + 隨身薄外套</strong><br>下機進入冷氣商場與餐廳較涼，建議幫長輩準備一件透氣薄罩衫應對溫差。",
-            2: "<strong>吸濕排汗衣物 + 好走平底鞋</strong><br>戶外走動多且濱海灣溫差大（雲霧林室內冷氣強、戶外約 30°C），建議洋蔥式穿法與防曬帽。",
-            3: "<strong>舒適透氣休閒服 + 輕便鞋</strong><br>前往植物園戶外散步，穿著吸汗透氣短袖，準備前往星耀樟宜搭機即可。"
-        };
-
-        // 強制頁面回到最頂端的通用函式
         function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'instant' });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
             document.documentElement.scrollTop = 0;
             document.body.scrollTop = 0;
         }
@@ -808,7 +725,6 @@
             activeBtn.classList.remove('text-gray-400');
             activeBtn.classList.add('text-fuji', 'font-bold');
 
-            // 執行回到頂端
             scrollToTop();
         }
 
@@ -826,7 +742,6 @@
             document.getElementById('outfit-day-tag').innerText = `Day ${dayNum} 搭配`;
             document.getElementById('outfit-content').innerHTML = outfitData[dayNum];
 
-            // 執行回到頂端
             scrollToTop();
         }
 
