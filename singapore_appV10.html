@@ -125,7 +125,7 @@
                     </div>
                     <span class="text-xs text-gray-400 font-medium">集中市中心 短距移動</span>
                 </div>
-                <!-- 路線示意圖 (已更新為指定 Day 2 圖片) -->
+                <!-- 路線示意圖 -->
                 <div class="relative bg-slate-100 min-h-[220px] flex items-center justify-center p-2">
                     <img src="https://image.cdn-eztravel.com.tw/Vy1OEfl7FQYl-D00CpntE3rqZoupT90LuRo43qVwU8A/g:ce/aHR0cHM6Ly92YWNhdGlvbi5jZG4tZXp0cmF2ZWwuY29tLnR3L2ltZy9WRFIvU0dfMzUwNDg0MTQ2LmpwZw.jpg" alt="Day 2 路線地圖" class="w-full h-52 object-cover rounded-2xl shadow-inner border border-gray-200">
                     <div class="absolute inset-0 bg-black/20 rounded-2xl flex flex-col justify-between p-4">
@@ -176,7 +176,7 @@
                     </div>
                     <span class="text-xs text-gray-400 font-medium">往東返航路線</span>
                 </div>
-                <!-- 路線示意圖 (已更新為指定 Day 3 圖片) -->
+                <!-- 路線示意圖 -->
                 <div class="relative bg-slate-100 min-h-[220px] flex items-center justify-center p-2">
                     <img src="https://d189djjbmcrkk.cloudfront.net/tinymce/h1PBSjlAjtVpVZtm8RXcOf3f9Iil68WCVCYni82Q.jpeg" alt="Day 3 路線地圖" class="w-full h-52 object-cover rounded-2xl shadow-inner border border-gray-200">
                     <div class="absolute inset-0 bg-black/20 rounded-2xl flex flex-col justify-between p-4">
@@ -579,7 +579,7 @@
                 </div>
             </div>
 
-            <!-- 2. 門票費用與免費景點整理 (表格呈現) -->
+            <!-- 2. 門票費用與免費景點整理 -->
             <div class="bg-white rounded-3xl p-5 shadow-sm border border-blue-50">
                 <h3 class="font-bold text-gray-800 mb-3 text-sm flex items-center space-x-2">
                     <span class="text-base">🎟️</span>
@@ -694,7 +694,7 @@
 
     </main>
 
-    <!-- 底部浮動導覽條 (依序為：行程概略 > 每日行程 > 指南 > 天氣) -->
+    <!-- 底部浮動導覽條 -->
     <nav class="fixed bottom-4 left-0 right-0 z-50 px-4">
         <div class="max-w-md mx-auto bg-white/90 backdrop-blur-lg rounded-3xl shadow-lg border border-blue-100 p-1.5 flex justify-around items-center">
             <button onclick="switchTab('route')" id="nav-route" class="nav-btn flex-1 flex flex-col items-center py-1.5 text-fuji font-bold">
@@ -736,6 +736,9 @@
             const activeBtn = document.getElementById(`nav-${tabName}`);
             activeBtn.classList.remove('text-gray-400');
             activeBtn.classList.add('text-fuji', 'font-bold');
+
+            // 修正體驗：切換頁籤時自動回到頁面最頂端
+            window.scrollTo(0, 0);
         }
 
         function switchDay(dayNum) {
@@ -751,6 +754,9 @@
 
             document.getElementById('outfit-day-tag').innerText = `Day ${dayNum} 搭配`;
             document.getElementById('outfit-content').innerHTML = outfitData[dayNum];
+
+            // 修正體驗：切換 Day 1 / Day 2 / Day 3 時也自動回到頂端
+            window.scrollTo(0, 0);
         }
 
         function previewImage(event, previewId) {
