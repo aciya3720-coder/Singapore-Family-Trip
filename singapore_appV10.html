@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新加坡家庭旅遊隨身 App</title>
+    <!-- Google Fonts: Zen Maru Gothic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        fuji: '#3b82f6',
+                        'fuji-light': '#eff6ff',
+                        'fuji-dark': '#1d4ed8',
+                        warmgray: '#f3f4f6',
+                    },
+                    fontFamily: {
+                        sans: ['Zen Maru Gothic', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Zen Maru Gothic', sans-serif;
+            background-color: #eef2f6;
+            background-image: radial-gradient(#dbeafe 1.5px, transparent 1.5px);
+            background-size: 16px 16px;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="text-gray-700 pb-28 min-h-screen">
+
+    <!-- 頂部 Header -->
+    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-blue-100 shadow-sm px-5 py-4">
+        <div class="max-w-md mx-auto flex justify-between items-center">
+            <div>
+                <span class="inline-block bg-blue-100 text-fuji font-bold text-xs px-2.5 py-0.5 rounded-full mb-1">
+                    🇸🇬 Family Trip
+                </span>
+                <h1 class="text-xl font-bold text-gray-800 tracking-wide">新加坡孝親好玩之旅</h1>
+                <p class="text-xs text-gray-400 font-medium">3 天 2 夜完整隨身行程</p>
+            </div>
+            <div class="w-10 h-10 rounded-2xl bg-fuji-light flex items-center justify-center text-xl shadow-inner border border-blue-200">
+                🦁
+            </div>
+        </div>
+    </header>
+
+    <!-- 主內容區域 -->
+    <main class="max-w-md mx-auto px-4 pt-4">
+
+        <!-- ================= 頁籤 1：行程概略頁 (Route) ================= -->
+        <section id="tab-route" class="space-y-6">
+            
+            <div class="bg-blue-50/80 rounded-2xl p-3.5 border border-blue-100 text-xs text-blue-800 flex items-center space-x-2">
+                <span class="text-base">🗺️</span>
+                <span>點擊圖片可放大觀看，右側顯示預估移動車程。</span>
+            </div>
+
+            <!-- DAY 1 路線圖 -->
+            <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-blue-50">
+                <div class="p-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
+                    <div>
+                        <span class="bg-fuji text-white text-[10px] font-bold px-2 py-0.5 rounded-md">DAY 1</span>
+                        <h3 class="text-base font-bold text-gray-800 inline-block ml-2">抵達新加坡與首夜</h3>
+                    </div>
+                    <span class="text-xs text-gray-400 font-medium">全程 Grab 約 30-40 分</span>
+                </div>
+                <!-- 路線示意圖 -->
+                <div class="relative bg-slate-100 min-h-[220px] flex items-center justify-center p-2">
+                    <img src="https://images.unsplash.com/photo-1542296332-2e4473faf563?auto=format&fit=crop&w=800&q=80" alt="Day 1 路線地圖" class="w-full h-52 object-cover rounded-2xl shadow-inner border border-gray-200">
+                    <div class="absolute inset-0 bg-black/20 rounded-2xl flex flex-col justify-between p-4">
+                        <div class="bg-white/90 backdrop-blur-md self-start text-[11px] font-bold text-gray-800 px-3 py-1 rounded-full shadow-sm">
+                            📍 機場 ➔ 喜來登酒店 ➔ 松發肉骨茶
+                        </div>
+                        <div class="bg-blue-600/90 backdrop-blur-md text-white text-[10px] font-bold px-2.5 py-1 rounded-lg self-end">
+                            🚗 總車程約 25 公里
+                        </div>
+                    </div>
+                </div>
+                <!-- 路線順序點列表 -->
+                <div class="p-4 space-y-2 text-xs">
+                    <div class="flex items-center space-x-2">
+                        <span class="w-5 h-5 rounded-full bg-red-500 text-white font-bold text-[11px] flex items-center justify-center">1</span>
+                        <span class="font-bold text-gray-800">樟宜國際機場 (Changi Airport)</span>
+                    </div>
+                    <div class="ml-2.5 pl-3 border-l-2 border-dashed border-red-200 text-gray-400 text-[11px] py-0.5">
+                        🚘 Grab 車程約 20 分鐘 (18km)
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <span class="w-5 h-5 rounded-full bg-red-500 text-white font-bold text-[11px] flex items-center justify-center">2</span>
+                        <span class="font-bold text-gray-800">喜來登酒店 (Sheraton Towers)</span>
+                    </div>
+                    <div class="ml-2.5 pl-3 border-l-2 border-dashed border-red-200 text-gray-400 text-[11px] py-0.5">
+                        🚘 Grab 車程約 10 分鐘 (3.5km)
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <span class="w-5 h-5 rounded-full bg-red-500 text-white font-bold text-[11px] flex items-center justify-center">3</span>
+                        <span class="font-bold text-gray-800">松發肉骨茶 (Centrepoint)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DAY 2 路線圖 -->
+            <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-blue-50">
+                <div class="p-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
+                    <div>
+                        <span class="bg-fuji text-white text-[10px] font-bold px-2 py-0.5 rounded-md">DAY 2</span>
+                        <h3 class="text-base font-bold text-gray-800 inline-block ml-2">濱海灣一日遊精華</h3>
+                    </div>
+                    <span class="text-xs text-gray-400 font-medium">集中市中心 短距移動</span>
+                </div>
+                <!-- 路線示意圖 (已更新為指定 Day 2 圖片) -->
+                <div class="relative bg-slate-100 min-h-[220px] flex items-center justify-center p-2">
+                    <img src="https://image.cdn-eztravel.com.tw/Vy1OEfl7FQYl-D00CpntE3rqZoupT90LuRo43qVwU8A/g:ce/aHR0cHM6Ly92YWNhdGlvbi5jZG4tZXp0cmF2ZWwuY29tLnR3L2ltZy9WRFIvU0dfMzUwNDg0MTQ2LmpwZw.jpg" alt="Day 2 路線地圖" class="w-full h-52 object-cover rounded-2xl shadow-inner border border-gray-200">
+                    <div class="absolute inset-0 bg-black/20 rounded-2xl flex flex-col justify-between p-4">
+                        <div class="bg-white/90 backdrop-blur-md self-start text-[11px] font-bold text-gray-800 px-3 py-1 rounded-full shadow-sm">
+                            📍 讚美廣場 ➔ 魚尾獅 ➔ 金沙 ➔ 雲霧林
+                        </div>
+                        <div class="bg-emerald-600/90 backdrop-blur-md text-white text-[10px] font-bold px-2.5 py-1 rounded-lg self-end">
+                            🚶 室內連通道 + 短程 Grab
+                        </div>
+                    </div>
+                </div>
+                <!-- 路線順序點列表 -->
+                <div class="p-4 space-y-2 text-xs">
+                    <div class="flex items-center space-x-2">
+                        <span class="w-5 h-5 rounded-full bg-blue-500 text-white font-bold text-[11px] flex items-center justify-center">1</span>
+                        <span class="font-bold text-gray-800">讚美廣場 (CHIJMES)</span>
+                    </div>
+                    <div class="ml-2.5 pl-3 border-l-2 border-dashed border-blue-200 text-gray-400 text-[11px] py-0.5">
+                        🚘 Grab 車程 5 分鐘 (1.5km)
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <span class="w-5 h-5 rounded-full bg-blue-500 text-white font-bold text-[11px] flex items-center justify-center">2</span>
+                        <span class="font-bold text-gray-800">魚尾獅公園 (Merlion Park)</span>
+                    </div>
+                    <div class="ml-2.5 pl-3 border-l-2 border-dashed border-blue-200 text-gray-400 text-[11px] py-0.5">
+                        🚘 Grab 車程 5 分鐘 (1.8km)
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <span class="w-5 h-5 rounded-full bg-blue-500 text-white font-bold text-[11px] flex items-center justify-center">3</span>
+                        <span class="font-bold text-gray-800">金沙購物商城 & 雲霧林</span>
+                    </div>
+                    <div class="ml-2.5 pl-3 border-l-2 border-dashed border-blue-200 text-gray-400 text-[11px] py-0.5">
+                        🚶 平坦步道連通 (步行約 8 分鐘)
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <span class="w-5 h-5 rounded-full bg-blue-500 text-white font-bold text-[11px] flex items-center justify-center">4</span>
+                        <span class="font-bold text-gray-800">超級樹燈光秀 & 金沙水舞秀</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DAY 3 路線圖 -->
+            <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-blue-50">
+                <div class="p-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
+                    <div>
+                        <span class="bg-fuji text-white text-[10px] font-bold px-2 py-0.5 rounded-md">DAY 3</span>
+                        <h3 class="text-base font-bold text-gray-800 inline-block ml-2">植物園與樟宜機場</h3>
+                    </div>
+                    <span class="text-xs text-gray-400 font-medium">往東返航路線</span>
+                </div>
+                <!-- 路線示意圖 (已更新為指定 Day 3 圖片) -->
+                <div class="relative bg-slate-100 min-h-[220px] flex items-center justify-center p-2">
+                    <img src="https://d189djjbmcrkk.cloudfront.net/tinymce/h1PBSjlAjtVpVZtm8RXcOf3f9Iil68WCVCYni82Q.jpeg" alt="Day 3 路線地圖" class="w-full h-52 object-cover rounded-2xl shadow-inner border border-gray-200">
+                    <div class="absolute inset-0 bg-black/20 rounded-2xl flex flex-col justify-between p-4">
+                        <div class="bg-white/90 backdrop-blur-md self-start text-[11px] font-bold text-gray-800 px-3 py-1 rounded-full shadow-sm">
+                            📍 飯店 ➔ 植物園 ➔ 星耀樟宜 ➔ 機場登機
+                        </div>
+                        <div class="bg-amber-600/90 backdrop-blur-md text-white text-[10px] font-bold px-2.5 py-1 rounded-lg self-end">
+                            🚗 總車程約 25 公里
+                        </div>
+                    </div>
+                </div>
+                <!-- 路線順序點列表 -->
+                <div class="p-4 space-y-2 text-xs">
+                    <div class="flex items-center space-x-2">
+                        <span class="w-5 h-5 rounded-full bg-emerald-500 text-white font-bold text-[11px] flex items-center justify-center">1</span>
+                        <span class="font-bold text-gray-800">喜來登酒店退房</span>
+                    </div>
+                    <div class="ml-2.5 pl-3 border-l-2 border-dashed border-emerald-200 text-gray-400 text-[11px] py-0.5">
+                        🚘 Grab 車程 10 分鐘 (4km)
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <span class="w-5 h-5 rounded-full bg-emerald-500 text-white font-bold text-[11px] flex items-center justify-center">2</span>
+                        <span class="font-bold text-gray-800">新加坡植物園 (Swan Lake)</span>
+                    </div>
+                    <div class="ml-2.5 pl-3 border-l-2 border-dashed border-emerald-200 text-gray-400 text-[11px] py-0.5">
+                        🚘 Grab 車程 25 分鐘 (21km) 直達機場
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <span class="w-5 h-5 rounded-full bg-emerald-500 text-white font-bold text-[11px] flex items-center justify-center">3</span>
+                        <span class="font-bold text-gray-800">星耀樟宜 (Jewel) & 樟宜機場登機</span>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ================= 頁籤 2：每日行程頁 (Itinerary) ================= -->
+        <section id="tab-itinerary" class="space-y-6 hidden">
+            
+            <!-- 天數切換器 -->
+            <div class="flex space-x-2 overflow-x-auto hide-scrollbar py-1">
+                <button onclick="switchDay(1)" id="day-btn-1" class="day-btn flex-1 min-w-[110px] py-2 px-3 rounded-2xl bg-fuji text-white font-bold text-sm shadow-md transition-all text-center">
+                    Day 1 <span class="block text-[10px] font-normal opacity-90">抵達新加坡</span>
+                </button>
+                <button onclick="switchDay(2)" id="day-btn-2" class="day-btn flex-1 min-w-[110px] py-2 px-3 rounded-2xl bg-white text-gray-500 font-bold text-sm shadow-sm hover:bg-gray-50 transition-all text-center border border-gray-100">
+                    Day 2 <span class="block text-[10px] font-normal text-gray-400">濱海灣一日遊</span>
+                </button>
+                <button onclick="switchDay(3)" id="day-btn-3" class="day-btn flex-1 min-w-[110px] py-2 px-3 rounded-2xl bg-white text-gray-500 font-bold text-sm shadow-sm hover:bg-gray-50 transition-all text-center border border-gray-100">
+                    Day 3 <span class="block text-[10px] font-normal text-gray-400">植物園&星耀樟宜</span>
+                </button>
+            </div>
+
+            <!-- ================= DAY 1 內容 ================= -->
+            <div id="day-content-1" class="day-content space-y-4">
+                
+                <!-- 1. 樟宜機場抵達與通關 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-blue-50 transition-all hover:shadow-md">
+                    <div class="h-44 bg-cover bg-center relative" style="background-image: url('https://blog-static.kkday.com/zh-tw/blog/wp-content/uploads/batch_IMG_9866-1-1.jpg');">
+                        <span class="absolute top-3 left-3 bg-blue-500/90 backdrop-blur-md text-white font-bold text-xs px-3 py-1 rounded-full shadow-sm">
+                            🛬 17:15 - 18:30｜交通 / 通關
+                        </span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-lg font-bold text-gray-800 mb-1">抵達樟宜機場與通關</h3>
+                        <p class="text-xs text-gray-500 leading-relaxed mb-3">
+                            班機 17:15 降落樟宜機場，辦理入境與提領行李（建議預先向華航申請免費機場輪椅服務）。
+                        </p>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="bg-blue-50 text-blue-600 font-bold text-[11px] px-2.5 py-0.5 rounded-lg border border-blue-100">
+                                ♿ 華航免費輪椅接送
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. 前往飯店 Check in -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-blue-50 transition-all hover:shadow-md">
+                    <div class="h-44 bg-cover bg-center relative" style="background-image: url('https://cf.bstatic.com/xdata/images/hotel/max1024x768/808250525.jpg?k=dded1373db26672ba6e965f42855af13238d982c000cd7f85075da012f0a6f20&o=');">
+                        <span class="absolute top-3 left-3 bg-purple-500/90 backdrop-blur-md text-white font-bold text-xs px-3 py-1 rounded-full shadow-sm">
+                            🏨 18:30 - 19:15｜酒店 Check in
+                        </span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-lg font-bold text-gray-800 mb-1">前往飯店 Check in</h3>
+                        <p class="text-xs text-gray-500 leading-relaxed mb-3">
+                            搭乘 Grab (6人座 GrabCar 6-Seater) 前往 Sheraton Towers Singapore 辦理入住與寄放行李。
+                        </p>
+                        <div class="flex items-center space-x-2">
+                            <a href="https://maps.google.com/?q=Sheraton+Towers+Singapore" target="_blank" class="flex-1 bg-fuji text-white text-xs font-bold py-2.5 px-4 rounded-xl flex items-center justify-center space-x-1.5 shadow-sm">
+                                <span>📍 Google Maps 導航</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. 松發肉骨茶 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-blue-50 transition-all hover:shadow-md">
+                    <div class="h-44 bg-cover bg-center relative" style="background-image: url('https://res.klook.com/image/upload/w_750,h_469,c_fill,q_85/w_80,x_15,y_15,g_south_west,l_Klook_water_br_trans_yhcmh3/activities/cs274alcduljhmydfsh7.jpg');">
+                        <span class="absolute top-3 left-3 bg-amber-500/90 backdrop-blur-md text-white font-bold text-xs px-3 py-1 rounded-full shadow-sm">
+                            🍲 19:30 - 21:00｜晚餐
+                        </span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-lg font-bold text-gray-800 mb-1">松發肉骨茶</h3>
+                        <p class="text-xs text-gray-500 leading-relaxed mb-3">
+                            搭 Grab 至 Centrepoint 或 Chinatown Point 商場分店。全室內冷氣、無障礙坡道完善，享用胡椒肉骨茶（湯頭可免費無限續加），幫長輩暖胃舒緩飛行疲勞。
+                        </p>
+                        <div class="flex flex-wrap gap-1.5 mb-3">
+                            <span class="bg-red-50 text-red-500 font-bold text-[11px] px-2.5 py-0.5 rounded-lg border border-red-100">🔥 必吃：招牌龍骨湯</span>
+                            <span class="bg-orange-50 text-orange-500 font-bold text-[11px] px-2.5 py-0.5 rounded-lg border border-orange-100">必吃：滷油豆腐</span>
+                        </div>
+                        <div class="bg-amber-50/60 rounded-2xl p-3 border border-amber-100 mb-4 flex items-start space-x-2">
+                            <span class="text-base">📸</span>
+                            <div class="text-xs text-amber-800">
+                                <strong class="font-bold block mb-0.5">拍照小技巧：</strong>
+                                拍攝滾燙冒煙的肉骨茶特寫，背景帶到復古公雞碗最道地！
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <a href="https://maps.google.com/?q=Song+Fa+Bak+Kut+Teh+Centrepoint" target="_blank" class="flex-1 bg-fuji text-white text-xs font-bold py-2.5 px-4 rounded-xl flex items-center justify-center space-x-1.5 shadow-sm">
+                                <span>📍 Google Maps 導航</span>
+                            </a>
+                            <label class="cursor-pointer bg-fuji-light hover:bg-blue-100 text-fuji text-xs font-bold py-2.5 px-3 rounded-xl flex items-center justify-center transition-all border border-blue-200">
+                                <span>📷 拍照記錄</span>
+                                <input type="file" accept="image/*" class="hidden" onchange="previewImage(event, 'preview-1-3')">
+                            </label>
+                        </div>
+                        <div id="preview-1-3" class="hidden mt-3 flex gap-2 overflow-x-auto"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ================= DAY 2 內容 ================= -->
+            <div id="day-content-2" class="day-content space-y-4 hidden">
+                
+                <!-- 飯店早餐 -->
+                <div class="bg-white rounded-3xl p-5 shadow-sm border border-blue-50">
+                    <div class="flex justify-between items-center mb-1">
+                        <span class="bg-amber-100 text-amber-700 font-bold text-xs px-2.5 py-0.5 rounded-full">🍳 08:30 - 09:15</span>
+                        <span class="text-xs text-gray-400 font-bold">飯店享用早餐</span>
+                    </div>
+                    <p class="text-xs text-gray-500">在 Sheraton 飯店內享用豐盛早餐，悠閒準備出門。</p>
+                </div>
+
+                <!-- 1. 讚美廣場 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-blue-50 transition-all hover:shadow-md">
+                    <div class="h-44 bg-cover bg-center relative" style="background-image: url('https://image.cdn-eztravel.com.tw/CyYYISdMai4YuU2WiSS7Z6-0veh3aattON06eO-YmGk/g:ce/aHR0cHM6Ly92YWNhdGlvbi5jZG4tZXp0cmF2ZWwuY29tLnR3L2ltZy9WRFIvU0dfMjg1NzA5NDQyLmpwZw.jpg');">
+                        <span class="absolute top-3 left-3 bg-emerald-500/90 backdrop-blur-md text-white font-bold text-xs px-3 py-1 rounded-full shadow-sm">
+                            📷 09:30 - 10:30｜讚美廣場 (CHIJMES)
+                        </span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-lg font-bold text-gray-800 mb-1">讚美廣場 (CHIJMES)</h3>
+                        <p class="text-xs text-gray-500 leading-relaxed mb-3">
+                            交通：從飯店搭 Grab 南下僅 8-10 分鐘。<br>體驗：中庭平坦好推輪椅，欣賞純白哥德式教堂建築並拍照。
+                        </p>
+                        <div class="flex flex-wrap gap-1.5 mb-3">
+                            <span class="bg-purple-50 text-purple-600 font-bold text-[11px] px-2.5 py-0.5 rounded-lg border border-purple-100">✨ 必拍：白色哥德式教堂中庭</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <a href="https://maps.google.com/?q=CHIJMES+Singapore" target="_blank" class="flex-1 bg-fuji text-white text-xs font-bold py-2.5 px-4 rounded-xl flex items-center justify-center space-x-1.5 shadow-sm">
+                                <span>📍 Google Maps 導航</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. 魚尾獅公園 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-blue-50 transition-all hover:shadow-md">
+                    <div class="h-44 bg-cover bg-center relative" style="background-image: url('https://image.cdn-eztravel.com.tw/3AKAf94bbctDFJ2yw7lq0JgZ_2Z3dQXTHIkLchaXLVA/g:ce/aHR0cHM6Ly92YWNhdGlvbi5jZG4tZXp0cmF2ZWwuY29tLnR3L2ltZy9WRFIvU0dfNDExMDMzMzU4LmpwZw.jpg');">
+                        <span class="absolute top-3 left-3 bg-emerald-500/90 backdrop-blur-md text-white font-bold text-xs px-3 py-1 rounded-full shadow-sm">
+                            📷 10:45 - 11:45｜魚尾獅公園
+                        </span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-lg font-bold text-gray-800 mb-1">魚尾獅公園 (Merlion Park)</h3>
+                        <p class="text-xs text-gray-500 leading-relaxed mb-3">
+                            交通：搭 Grab 往南僅 4-5 分鐘。<br>體驗：沿著平坦的沿海木棧道散步，拍白天版吐水魚尾獅與對岸金沙酒店景致。
+                        </p>
+                        <div class="flex flex-wrap gap-1.5 mb-3">
+                            <span class="bg-purple-50 text-purple-600 font-bold text-[11px] px-2.5 py-0.5 rounded-lg border border-purple-100">✨ 必拍：接水接財趣味照</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <a href="https://maps.google.com/?q=Merlion+Park" target="_blank" class="flex-1 bg-fuji text-white text-xs font-bold py-2.5 px-4 rounded-xl flex items-center justify-center space-x-1.5 shadow-sm">
+                                <span>📍 Google Maps 導航</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. 濱海灣金沙購物商城 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-blue-50 transition-all hover:shadow-md">
+                    <div class="h-44 bg-cover bg-center relative" style="background-image: url('https://www.bring-you.info/imgs/2016/08/Marina_Bay_Sands-2.jpg');">
+                        <span class="absolute top-3 left-3 bg-pink-500/90 backdrop-blur-md text-white font-bold text-xs px-3 py-1 rounded-full shadow-sm">
+                            🛍️ 12:00 - 14:00｜午餐 + LE LABO 購物
+                        </span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-lg font-bold text-gray-800 mb-1">濱海灣金沙購物商城</h3>
+                        <p class="text-xs text-gray-500 leading-relaxed mb-3">
+                            交通：搭 Grab 約 5 分鐘直達。<br>午餐：喜園、鼎泰豐、TWG Tea 或 B2 美食街。<br>購物：飯後直接在金沙 L1 層 LE LABO 專賣店試香採購（含城市限定系列）。
+                        </p>
+                        <div class="flex flex-wrap gap-1.5 mb-3">
+                            <span class="bg-pink-50 text-pink-600 font-bold text-[11px] px-2.5 py-0.5 rounded-lg border border-pink-100">🛍️ 必買：LE LABO 香氛</span>
+                            <span class="bg-amber-50 text-amber-600 font-bold text-[11px] px-2.5 py-0.5 rounded-lg border border-amber-100">🍲 必吃：喜園 / TWG</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <a href="https://maps.google.com/?q=The+Shoppes+at+Marina+Bay+Sands" target="_blank" class="flex-1 bg-fuji text-white text-xs font-bold py-2.5 px-4 rounded-xl flex items-center justify-center space-x-1.5 shadow-sm">
+                                <span>📍 Google Maps 導航</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. 雲霧林 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-blue-50 transition-all hover:shadow-md">
+                    <div class="h-44 bg-cover bg-center relative" style="background-image: url('https://dynamic-media-cdn.tripadvisor.com/media/photo-o/30/57/56/ce/cloud-forest-featuring.jpg?w=900&h=-1&s=1');">
+                        <span class="absolute top-3 left-3 bg-indigo-500/90 backdrop-blur-md text-white font-bold text-xs px-3 py-1 rounded-full shadow-sm">
+                            🌿 14:30 - 17:00｜雲霧林
+                        </span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-lg font-bold text-gray-800 mb-1">雲霧林 (Cloud Forest)</h3>
+                        <p class="text-xs text-gray-500 leading-relaxed mb-3">
+                            交通：從金沙商場直接走室內無障礙天橋/通道前往，無需搭車。<br>體驗：全室內冷氣、無障礙空中步道與電梯（內有侏儸紀主題恐龍展）。
+                        </p>
+                        <div class="flex flex-wrap gap-1.5 mb-3">
+                            <span class="bg-blue-50 text-blue-600 font-bold text-[11px] px-2.5 py-0.5 rounded-lg border border-blue-100">🦕 必看：侏儸紀恐龍展</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <a href="https://maps.google.com/?q=Cloud+Forest+Gardens+by+the+Bay" target="_blank" class="flex-1 bg-fuji text-white text-xs font-bold py-2.5 px-4 rounded-xl flex items-center justify-center space-x-1.5 shadow-sm">
+                                <span>📍 Google Maps 導航</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 濱海灣花園晚餐 -->
+                <div class="bg-white rounded-3xl p-5 shadow-sm border border-blue-50">
+                    <div class="flex justify-between items-center mb-1">
+                        <span class="bg-amber-100 text-amber-700 font-bold text-xs px-2.5 py-0.5 rounded-full">🍲 17:30 - 19:00</span>
+                        <span class="text-xs text-gray-400 font-bold">園區晚餐</span>
+                    </div>
+                    <p class="text-xs text-gray-500">直接在園區內享用（如 Shake Shack 或 Satay by the Bay 沙爹熟食中心），不拉車耗費體力。</p>
+                </div>
+
+                <!-- 5. 超級樹燈光秀 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-blue-50 transition-all hover:shadow-md">
+                    <div class="h-44 bg-cover bg-center relative" style="background-image: url('https://retrievertrip.com/wp-content/uploads/2023/10/%E6%BF%B1%E6%B5%B7%E7%81%A3%E8%8A%B1%E5%9C%92Gardens-by-the-Bay%E8%B6%85%E7%B4%9A%E6%A8%B9%E7%A9%BA%E4%B8%AD%E8%B5%B0%E5%BB%8A%EF%BC%88OCBC-Skyway%EF%BC%89-4-800x600.jpg');">
+                        <span class="absolute top-3 left-3 bg-purple-600/90 backdrop-blur-md text-white font-bold text-xs px-3 py-1 rounded-full shadow-sm">
+                            ✨ 19:45 - 20:15｜超級樹燈光秀
+                        </span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-lg font-bold text-gray-800 mb-1">超級樹燈光秀 (SuperTree Grove)</h3>
+                        <p class="text-xs text-gray-500 leading-relaxed mb-3">
+                            步行至戶外無障礙平台，坐在平台上觀賞 19:45 免費第一場燈光秀。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 6. 金沙 Spectra 水舞秀 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-blue-50 transition-all hover:shadow-md">
+                    <div class="h-44 bg-cover bg-center relative" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTkGnfTcMMRWOjPQ6IJSM5_zOnloIgG-lq_L_0e9DrKW6gGT9m_66UcjE&s=10');">
+                        <span class="absolute top-3 left-3 bg-blue-600/90 backdrop-blur-md text-white font-bold text-xs px-3 py-1 rounded-full shadow-sm">
+                            ⛲ 20:30 - 21:15｜金沙水舞秀
+                        </span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-lg font-bold text-gray-800 mb-1">金沙 Spectra 水舞秀</h3>
+                        <p class="text-xs text-gray-500 leading-relaxed mb-3">
+                            沿平坦步道走回金沙戶外親水平台，觀賞 21:00 免費水舞雷射秀。21:30 搭 Grab 返回飯店休息。
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ================= DAY 3 內容 ================= -->
+            <div id="day-content-3" class="day-content space-y-4 hidden">
+                
+                <!-- 飯店退房 -->
+                <div class="bg-white rounded-3xl p-5 shadow-sm border border-blue-50">
+                    <div class="flex justify-between items-center mb-1">
+                        <span class="bg-blue-100 text-blue-700 font-bold text-xs px-2.5 py-0.5 rounded-full">🧳 08:30 - 09:15</span>
+                        <span class="text-xs text-gray-400 font-bold">退房準備</span>
+                    </div>
+                    <p class="text-xs text-gray-500">飯店享用早餐與辦理退房（行李隨車載走）。</p>
+                </div>
+
+                <!-- 1. 新加坡植物園 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-blue-50 transition-all hover:shadow-md">
+                    <div class="h-44 bg-cover bg-center relative" style="background-image: url('https://img.natgeomedia.com/userfiles/sm/sm1920_images_A1/10857/2020032061486861.jpg');">
+                        <span class="absolute top-3 left-3 bg-emerald-500/90 backdrop-blur-md text-white font-bold text-xs px-3 py-1 rounded-full shadow-sm">
+                            🌿 09:30 - 11:30｜植物園天鵝湖
+                        </span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-lg font-bold text-gray-800 mb-1">新加坡植物園 (天鵝湖 Swan Lake 尋水獺)</h3>
+                        <p class="text-xs text-gray-500 leading-relaxed mb-3">
+                            交通：搭 Grab 定位在「Tanglin Gate / Swan Lake」下車。<br>體驗：早晨氣候宜人，全區為平坦柏油路與緩坡。沿天鵝湖邊散步，尋找野生水獺（Otters）蹤跡與賞鳥。
+                        </p>
+                        <div class="flex flex-wrap gap-1.5 mb-3">
+                            <span class="bg-purple-50 text-purple-600 font-bold text-[11px] px-2.5 py-0.5 rounded-lg border border-purple-100">🦦 必拍：野生水獺</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <a href="https://maps.google.com/?q=Swan+Lake+Singapore+Botanic+Gardens" target="_blank" class="flex-1 bg-fuji text-white text-xs font-bold py-2.5 px-4 rounded-xl flex items-center justify-center space-x-1.5 shadow-sm">
+                                <span>📍 Google Maps 導航</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. 星耀樟宜 (Jewel) 午餐與巨型瀑布 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-blue-50 transition-all hover:shadow-md">
+                    <div class="h-44 bg-cover bg-center relative" style="background-image: url('https://mimigo.tw/wp-content/uploads/20190419113553_64.jpg');">
+                        <span class="absolute top-3 left-3 bg-blue-600/90 backdrop-blur-md text-white font-bold text-xs px-3 py-1 rounded-full shadow-sm">
+                            💎 12:00 - 16:00｜星耀樟宜 Jewel
+                        </span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-lg font-bold text-gray-800 mb-1">星耀樟宜 (Jewel) 午餐與巨型瀑布</h3>
+                        <p class="text-xs text-gray-500 leading-relaxed mb-3">
+                            交通：搭 Grab 直達樟宜機場星耀樟宜。<br>午餐：在 B2 美食街享用「結霜橋叻沙」或在地美食。<br>體驗：推輪椅輕鬆圍繞雨漩渦巨型瀑布拍照、買伴手禮與休息。
+                        </p>
+                        <div class="flex flex-wrap gap-1.5 mb-3">
+                            <span class="bg-purple-50 text-purple-600 font-bold text-[11px] px-2.5 py-0.5 rounded-lg border border-purple-100">✨ 必拍：雨漩渦瀑布</span>
+                            <span class="bg-amber-50 text-amber-600 font-bold text-[11px] px-2.5 py-0.5 rounded-lg border border-amber-100">🍜 必吃：結霜橋叻沙</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <a href="https://maps.google.com/?q=Jewel+Changi+Airport" target="_blank" class="flex-1 bg-fuji text-white text-xs font-bold py-2.5 px-4 rounded-xl flex items-center justify-center space-x-1.5 shadow-sm">
+                                <span>📍 Google Maps 導航</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. 16:15 機場 Check in 通關 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-blue-50 transition-all hover:shadow-md">
+                    <div class="h-44 bg-cover bg-center relative" style="background-image: url('https://imgcdn.cna.com.tw/www/WebPhotos/1024/20250208/1024x768_wmkn_0_C20250208000132.jpg');">
+                        <span class="absolute top-3 left-3 bg-fuji-dark text-white font-bold text-xs px-3 py-1 rounded-full shadow-sm">
+                            ✈️ 16:15｜通關準備搭機
+                        </span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-lg font-bold text-gray-800 mb-1">機場 Check in 與通關返航</h3>
+                        <p class="text-xs text-gray-500 leading-relaxed mb-3">
+                            前往航廈辦理 Check in 與託運行李，進入管制區辦理通關與登機手續，中華航空 18:15 班機起飛返台。
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- 每日建議穿著 -->
+            <div class="bg-white rounded-3xl p-5 shadow-sm border border-blue-100">
+                <div class="flex items-center justify-between mb-3">
+                    <h4 class="font-bold text-gray-800 text-sm flex items-center space-x-1.5">
+                        <span>👕</span>
+                        <span>建議穿著 Outfit</span>
+                    </h4>
+                    <span id="outfit-day-tag" class="text-[11px] bg-fuji-light text-fuji font-bold px-2.5 py-0.5 rounded-full">
+                        Day 1 搭配
+                    </span>
+                </div>
+                <div id="outfit-content" class="text-xs text-gray-600 leading-relaxed bg-warmgray/60 p-3.5 rounded-2xl border border-gray-100">
+                    <!-- JS 動態替換 -->
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ================= 頁籤 3：指南頁 (Guide) ================= -->
+        <section id="tab-guide" class="space-y-4 hidden">
+            
+            <!-- 1. 無障礙景點評估 -->
+            <div class="bg-white rounded-3xl p-5 shadow-sm border border-blue-50">
+                <h3 class="font-bold text-gray-800 mb-3 text-sm flex items-center space-x-2">
+                    <span class="text-base">♿</span>
+                    <span>行程無障礙景點評估</span>
+                </h3>
+                <div class="space-y-2.5 text-xs text-gray-600">
+                    <div class="bg-blue-50/50 p-2.5 rounded-xl border border-blue-100">
+                        <div class="font-bold text-gray-800 mb-0.5">樟宜機場 & 星耀樟宜 (Jewel)</div>
+                        <p class="text-[11px]">★5顆星最高友善。全區電梯、無障礙坡道與廁所完善，坡度平緩。</p>
+                    </div>
+                    <div class="bg-blue-50/50 p-2.5 rounded-xl border border-blue-100">
+                        <div class="font-bold text-gray-800 mb-0.5">讚美廣場 & 魚尾獅公園</div>
+                        <p class="text-[11px]">全戶外平坦木棧道與廣場，無階梯障礙，推輪椅極度輕鬆。</p>
+                    </div>
+                    <div class="bg-blue-50/50 p-2.5 rounded-xl border border-blue-100">
+                        <div class="font-bold text-gray-800 mb-0.5">濱海灣金沙購物商城 & 雲霧林</div>
+                        <p class="text-[11px]">全室內無障礙連通道、電梯與空中步道，全程冷氣吹拂不曬太陽。</p>
+                    </div>
+                    <div class="bg-blue-50/50 p-2.5 rounded-xl border border-blue-100">
+                        <div class="font-bold text-gray-800 mb-0.5">新加坡植物園 (天鵝湖區)</div>
+                        <p class="text-[11px]">鋪設平坦柏油路，微幅緩坡，推輪椅散步賞景十分舒適。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. 門票費用與免費景點整理 (表格呈現) -->
+            <div class="bg-white rounded-3xl p-5 shadow-sm border border-blue-50">
+                <h3 class="font-bold text-gray-800 mb-3 text-sm flex items-center space-x-2">
+                    <span class="text-base">🎟️</span>
+                    <span>門票費用與免費景點整理</span>
+                </h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-xs border-collapse">
+                        <thead>
+                            <tr class="bg-blue-50/80 text-blue-900 border-b border-blue-100">
+                                <th class="p-2.5 font-bold rounded-tl-xl">景點名稱</th>
+                                <th class="p-2.5 font-bold w-20 text-center">門票</th>
+                                <th class="p-2.5 font-bold rounded-tr-xl">費用說明</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-100 text-gray-600">
+                            <tr class="hover:bg-gray-50/80">
+                                <td class="p-2.5 font-medium text-gray-800">讚美廣場 (CHIJMES)</td>
+                                <td class="p-2.5 text-center"><span class="bg-emerald-100 text-emerald-700 font-bold px-2 py-0.5 rounded-md text-[10px]">免費</span></td>
+                                <td class="p-2.5 text-gray-500">自由參觀拍照</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50/80">
+                                <td class="p-2.5 font-medium text-gray-800">魚尾獅公園</td>
+                                <td class="p-2.5 text-center"><span class="bg-emerald-100 text-emerald-700 font-bold px-2 py-0.5 rounded-md text-[10px]">免費</span></td>
+                                <td class="p-2.5 text-gray-500">戶外地標開放空間</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50/80">
+                                <td class="p-2.5 font-medium text-gray-800">雲霧林 (Cloud Forest)</td>
+                                <td class="p-2.5 text-center"><span class="bg-blue-100 text-blue-700 font-bold px-2 py-0.5 rounded-md text-[10px]">需門票</span></td>
+                                <td class="p-2.5 text-gray-500">成人約 S$53<br>長輩(60+)約 S$45</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50/80">
+                                <td class="p-2.5 font-medium text-gray-800">超級樹燈光秀</td>
+                                <td class="p-2.5 text-center"><span class="bg-emerald-100 text-emerald-700 font-bold px-2 py-0.5 rounded-md text-[10px]">免費</span></td>
+                                <td class="p-2.5 text-gray-500">戶外廣場自由觀賞</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50/80">
+                                <td class="p-2.5 font-medium text-gray-800">金沙 Spectra 水舞秀</td>
+                                <td class="p-2.5 text-center"><span class="bg-emerald-100 text-emerald-700 font-bold px-2 py-0.5 rounded-md text-[10px]">免費</span></td>
+                                <td class="p-2.5 text-gray-500">戶外親水平台觀賞</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50/80">
+                                <td class="p-2.5 font-medium text-gray-800">新加坡植物園 (天鵝湖)</td>
+                                <td class="p-2.5 text-center"><span class="bg-emerald-100 text-emerald-700 font-bold px-2 py-0.5 rounded-md text-[10px]">免費</span></td>
+                                <td class="p-2.5 text-gray-500">戶外園區免費入園</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50/80">
+                                <td class="p-2.5 font-medium text-gray-800">星耀樟宜 (雨漩渦瀑布)</td>
+                                <td class="p-2.5 text-center"><span class="bg-emerald-100 text-emerald-700 font-bold px-2 py-0.5 rounded-md text-[10px]">免費</span></td>
+                                <td class="p-2.5 text-gray-500">商場公共空間觀賞</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mt-3 bg-amber-50/80 p-2.5 rounded-xl border border-amber-100 text-[11px] text-amber-800">
+                    💡 <strong>購票建議：</strong>「雲霧林」門票建議事先於 Klook 或 KKday 線上購買，現場直接掃手機 QR Code 快速入場，省去排隊時間！
+                </div>
+            </div>
+
+            <!-- 3. 餐廳推薦與訂位指南 -->
+            <div class="bg-white rounded-3xl p-5 shadow-sm border border-blue-50">
+                <h3 class="font-bold text-gray-800 mb-3 text-sm flex items-center space-x-2">
+                    <span class="text-base">🍽️</span>
+                    <span>餐廳推薦與訂位指南</span>
+                </h3>
+                <div class="text-xs space-y-2.5 text-gray-600">
+                    <div class="border-b border-gray-100 pb-2">
+                        <div class="font-bold text-gray-800">1. 松發肉骨茶 (Day 1 晚餐)</div>
+                        <p class="text-[11px] text-gray-500">無法預約。現場排隊翻桌快，商場分店冷氣強、桌位寬敞好推輪椅。</p>
+                    </div>
+                    <div class="border-b border-gray-100 pb-2">
+                        <div class="font-bold text-gray-800">2. 金沙商場午餐 (Day 2 午餐)</div>
+                        <p class="text-[11px] text-gray-500">鼎泰豐 / TWG Tea 可預先線上訂位；喜園或 B2 Rasapura Masters 美食街現場找位。</p>
+                    </div>
+                    <div class="border-b border-gray-100 pb-2">
+                        <div class="font-bold text-gray-800">3. 濱海灣花園內晚餐 (Day 2 晚餐)</div>
+                        <p class="text-[11px] text-gray-500">Shake Shack 或 Satay by the Bay 沙爹熟食中心（自由入座，不需訂位）。</p>
+                    </div>
+                    <div>
+                        <div class="font-bold text-gray-800">4. 星耀樟宜 B2 美食街 (Day 3 午餐)</div>
+                        <p class="text-[11px] text-gray-500">美食街自由入座，享用「結霜橋叻沙」等在地小吃，環境舒適無障礙。</p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ================= 頁籤 4：天氣頁 (Weather) ================= -->
+        <section id="tab-weather" class="space-y-4 hidden">
+            <div class="bg-white rounded-3xl p-5 shadow-sm border border-blue-50 text-center">
+                <div class="text-4xl mb-2">🌦️</div>
+                <h3 class="font-bold text-gray-800 text-base">新加坡即時天氣預報</h3>
+                <p class="text-xs text-gray-400 mt-1">全年熱帶陣雨氣候，建議隨身攜帶輕便折傘與室內冷氣房薄外套。</p>
+                <div class="mt-4 grid grid-cols-3 gap-2 text-xs">
+                    <div class="bg-fuji-light p-3 rounded-2xl">
+                        <div class="font-bold text-gray-500">Day 1</div>
+                        <div class="text-lg my-1">⛅</div>
+                        <div class="font-bold text-fuji">26 - 31°C</div>
+                    </div>
+                    <div class="bg-fuji-light p-3 rounded-2xl">
+                        <div class="font-bold text-gray-500">Day 2</div>
+                        <div class="text-lg my-1">🌦️</div>
+                        <div class="font-bold text-fuji">25 - 30°C</div>
+                    </div>
+                    <div class="bg-fuji-light p-3 rounded-2xl">
+                        <div class="font-bold text-gray-500">Day 3</div>
+                        <div class="text-lg my-1">☀️</div>
+                        <div class="font-bold text-fuji">27 - 32°C</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 底部浮動導覽條 (依序為：行程概略 > 每日行程 > 指南 > 天氣) -->
+    <nav class="fixed bottom-4 left-0 right-0 z-50 px-4">
+        <div class="max-w-md mx-auto bg-white/90 backdrop-blur-lg rounded-3xl shadow-lg border border-blue-100 p-1.5 flex justify-around items-center">
+            <button onclick="switchTab('route')" id="nav-route" class="nav-btn flex-1 flex flex-col items-center py-1.5 text-fuji font-bold">
+                <span class="text-lg">🗺️</span>
+                <span class="text-[10px] mt-0.5">行程概略</span>
+            </button>
+            <button onclick="switchTab('itinerary')" id="nav-itinerary" class="nav-btn flex-1 flex flex-col items-center py-1.5 text-gray-400 hover:text-gray-600">
+                <span class="text-lg">📋</span>
+                <span class="text-[10px] mt-0.5">每日行程</span>
+            </button>
+            <button onclick="switchTab('guide')" id="nav-guide" class="nav-btn flex-1 flex flex-col items-center py-1.5 text-gray-400 hover:text-gray-600">
+                <span class="text-lg">📖</span>
+                <span class="text-[10px] mt-0.5">指南</span>
+            </button>
+            <button onclick="switchTab('weather')" id="nav-weather" class="nav-btn flex-1 flex flex-col items-center py-1.5 text-gray-400 hover:text-gray-600">
+                <span class="text-lg">☀️</span>
+                <span class="text-[10px] mt-0.5">天氣</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- JS 邏輯 -->
+    <script>
+        const outfitData = {
+            1: "<strong>輕便涼爽短袖 + 隨身薄外套</strong><br>下機進入冷氣商場與餐廳較涼，建議幫長輩準備一件透氣薄罩衫應對溫差。",
+            2: "<strong>吸濕排汗衣物 + 好走平底鞋</strong><br>戶外走動多且濱海灣溫差大（雲霧林室內冷氣強、戶外約 30°C），建議洋蔥式穿法與防曬帽。",
+            3: "<strong>舒適透氣休閒服 + 輕便鞋</strong><br>前往植物園戶外散步，穿著吸汗透氣短袖，準備前往星耀樟宜搭機即可。"
+        };
+
+        function switchTab(tabName) {
+            document.querySelectorAll('main > section').forEach(el => el.classList.add('hidden'));
+            document.getElementById(`tab-${tabName}`).classList.remove('hidden');
+
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('text-fuji', 'font-bold');
+                btn.classList.add('text-gray-400');
+            });
+
+            const activeBtn = document.getElementById(`nav-${tabName}`);
+            activeBtn.classList.remove('text-gray-400');
+            activeBtn.classList.add('text-fuji', 'font-bold');
+        }
+
+        function switchDay(dayNum) {
+            document.querySelectorAll('.day-content').forEach(el => el.classList.add('hidden'));
+            document.getElementById(`day-content-${dayNum}`).classList.remove('hidden');
+
+            document.querySelectorAll('.day-btn').forEach(btn => {
+                btn.className = "day-btn flex-1 min-w-[110px] py-2 px-3 rounded-2xl bg-white text-gray-500 font-bold text-sm shadow-sm hover:bg-gray-50 transition-all text-center border border-gray-100";
+            });
+
+            const activeBtn = document.getElementById(`day-btn-${dayNum}`);
+            activeBtn.className = "day-btn flex-1 min-w-[110px] py-2 px-3 rounded-2xl bg-fuji text-white font-bold text-sm shadow-md transition-all text-center";
+
+            document.getElementById('outfit-day-tag').innerText = `Day ${dayNum} 搭配`;
+            document.getElementById('outfit-content').innerHTML = outfitData[dayNum];
+        }
+
+        function previewImage(event, previewId) {
+            const container = document.getElementById(previewId);
+            container.classList.remove('hidden');
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const img = document.createElement('img');
+                    img.src = e.target.result;
+                    img.className = 'w-16 h-16 object-cover rounded-2xl border border-blue-200 shadow-sm';
+                    container.appendChild(img);
+                }
+                reader.readAsDataURL(file);
+            }
+        }
+
+        window.onload = function() {
+            switchTab('route');
+            switchDay(1);
+        };
+    </script>
+</body>
+</html>
